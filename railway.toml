@@ -1,0 +1,21 @@
+# Railway 配置 - BRM Bitcoin Monitor
+
+[[services]]
+name = "brm-web"
+build.cmd = "npm ci && npm run build"
+start.cmd = "npm run start"
+healthcheck.path = "/api/health"
+healthcheck.interval = 30
+healthcheck.timeout = 10
+
+[[services]]
+name = "brm-worker"
+build.cmd = "npm ci"
+start.cmd = "npm run worker"
+# Worker 不需要健康檢查 HTTP endpoint
+
+# 環境變量 (Railway 會自動注入 DATABASE_URL 和 REDIS_URL)
+# 如果需要自定義：
+# [env]
+# SYMBOL = "btcusdt"
+# NODE_ENV = "production"
