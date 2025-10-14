@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { getFromRedis } from "@/src/lib/redis";
-import { fetchBinanceTicker } from "@/src/lib/sources/binance";
+import { getFromRedis } from "@/lib/redis";
+import { fetchBinanceTicker } from "@/lib/sources/binance";
 
 export const dynamic = "force-dynamic";
 
