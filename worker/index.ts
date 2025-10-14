@@ -149,13 +149,13 @@ async function handleOrderBook(data: any) {
 
   // 計算累計量
   let totalBids = 0;
-  orderbook.bids = orderbook.bids.map(bid => {
+  orderbook.bids = orderbook.bids.map((bid: { price: number; size: number }) => {
     totalBids += bid.size;
     return { ...bid, total: Number(totalBids.toFixed(3)) };
   });
 
   let totalAsks = 0;
-  orderbook.asks = orderbook.asks.map(ask => {
+  orderbook.asks = orderbook.asks.map((ask: { price: number; size: number }) => {
     totalAsks += ask.size;
     return { ...ask, total: Number(totalAsks.toFixed(3)) };
   });
