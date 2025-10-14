@@ -212,8 +212,7 @@ export default function Dashboard() {
                 !name.includes('victoria') && 
                 !name.includes('samantha') &&
                 !name.includes('karen') &&
-                !name.includes('moira') &&
-                voice.gender !== 'female');
+                !name.includes('moira'));
       }) || voices.find(voice => !voice.name.toLowerCase().includes('female')) || voices[0];
       
       utterance.voice = maleVoice;
